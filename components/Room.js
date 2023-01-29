@@ -1,12 +1,17 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react'
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 
+const Room = ({ navigation }) => {
 
-const Room = () => {
   return (
     <View style={styles.borderRoom}>
         <Text style={styles.textStylingTitle}>Select Room</Text>
-        <Pressable style={styles.borderSelect}>
+        <Pressable 
+            title="test" 
+            style={styles.borderSelect}
+            onPress={() => navigation.navigate('Test')}
+        >
             <Text style={styles.textStyling}>Join a room</Text>
         </Pressable>
         <Pressable style={styles.borderSelect}>

@@ -1,16 +1,27 @@
-import React from 'react'
 import { StyleSheet, View } from 'react-native';
 
 import Title from '../components/Title';
 import Room from '../components/Room';
 import Exit from '../components/Exit';
+import { useNavigation } from '@react-navigation/native';
+import { useLayoutEffect } from 'react';
+
 
 const Index = () => {
+
+  const navigation = useNavigation()
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerShown: false,
+    })
+  }, [])
+
   return (
     <>
     <View style={styles.topLayout}>
         <Title />
-        <Room />
+        <Room navigation={navigation} />
     </View>
     <View style={styles.bottomLayout}>
         <Exit />
